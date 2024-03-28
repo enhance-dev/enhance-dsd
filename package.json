@@ -1,0 +1,22 @@
+{
+  "name": "@enhance/dsd",
+  "version": "1.0.0",
+  "description": "Enhance declarative Shadow DOM serverside renderer",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "tape test.mjs | tap-arc"
+  },
+  "keywords": [],
+  "author": "Kristofer Joseph @dam",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "tap-arc": "^1.2.2",
+    "tape": "^5.7.5"
+  },
+  "dependencies": {
+    "@begin/parse5": "^0.0.4",
+    "nanoid": "^5.0.6"
+  }
+}
