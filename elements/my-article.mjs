@@ -12,5 +12,5 @@ export default function MyArticle({ html }) {
         <p>I'm in the shadow DOM.</p>
       </slot>
     </article>
-  `;
+  `
 }

@@ -88,8 +88,7 @@ export default function Enhance(options = {}) {
               store,
             },
           });
-          const t = fragment(`
-            <template shadowrootmode="open">
+          const t = fragment(`<template shadowrootmode="open">
               ${
                 shadowStylesheets.length
                   ? shadowStylesheets
@@ -100,9 +99,7 @@ export default function Enhance(options = {}) {
                       ?.join("\n")
                   : ""
               }
-              ${rendered}
-            </template>
-          `);
+              ${rendered}</template>`)
           child.childNodes.unshift(...t.childNodes);
         }
 
@@ -137,7 +134,7 @@ export default function Enhance(options = {}) {
       : elements[name];
 
     if (template && typeof template === "function") {
-      const templateDocument = template({ html: render, state });
+      const templateDocument = template({ html: render, state }).trim()
       const document = parseAndProcess(templateDocument);
       const out = serialize(document);
       return out;

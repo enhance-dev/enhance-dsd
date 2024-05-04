@@ -25,8 +25,7 @@ test("Should add declarative shadow dom", (t) => {
     </my-article>
   `;
   const expected = `
-<my-article enhanced="✨">
-  <template shadowrootmode="open">
+  <my-article enhanced="✨"><template shadowrootmode="open">
     <style>
       p {
         padding: 2rem;
@@ -38,8 +37,7 @@ test("Should add declarative shadow dom", (t) => {
       <slot name="content">
         <p>I'm in the shadow DOM.</p>
       </slot>
-    </article>
-  </template>
+    </article></template>
   <p slot="content">
     authored content
   </p>
@@ -60,23 +58,18 @@ test("Should append templates to nested slements", (t) => {
   });
   const actual = html` <my-composite></my-composite> `;
   const expected = `
-  <my-composite enhanced="✨">
-    <template shadowrootmode="open">
-      <my-header enhanced="✨">
-        <template shadowrootmode="open">
+  <my-composite enhanced="✨"><template shadowrootmode="open">
+      <my-header enhanced="✨"><template shadowrootmode="open">
           <header>
             <slot></slot>
-          </header>
-        </template>
+          </header></template>
       </my-header>
-      <my-footer enhanced="✨">
-        <template shadowrootmode="open">
+      <my-footer enhanced="✨"><template shadowrootmode="open">
           <footer>
             <slot></slot>
           </footer>
         </template>
-      </my-footer>
-    </template>
+      </my-footer></template>
   </my-composite>
   `;
   t.equal(
